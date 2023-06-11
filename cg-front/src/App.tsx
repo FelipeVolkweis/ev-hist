@@ -60,7 +60,10 @@ export default function Album() {
         {/* Hero unit */}
         <Box
           sx={{
-            bgcolor: '#74247A',
+            backgroundColor: "#74247A",
+            backgroundImage: "radial-gradient(black .2em, transparent 0)",
+            backgroundSize: "2em 2em",
+            backgroundPosition: "-2em -2em",
             pt: 8,
             pb: 6,
           }}
