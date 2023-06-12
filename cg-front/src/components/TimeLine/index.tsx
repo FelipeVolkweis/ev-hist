@@ -23,7 +23,7 @@ export const TimeLine = (props: IProps) => {
                     <>
                     <TimelineItem>
                         <TimelineOppositeContent
-                        sx={{ m: 'auto 0' }}
+                        sx={{ m: 'auto 0', textAlign: "center" }}
                         align="right"
                         variant="body2"
                         color="text.secondary"
@@ -55,7 +55,7 @@ export const TimeLine = (props: IProps) => {
                     return (
                     <TimelineItem>
                         <TimelineOppositeContent
-                        sx={{ m: 'auto 0' }}
+                        sx={{ m: 'auto 0', textAlign: "center" }}
                         variant="body2"
                         color="text.secondary"
                         >
