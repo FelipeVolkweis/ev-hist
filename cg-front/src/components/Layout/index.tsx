@@ -11,6 +11,7 @@ import type {} from '@mui/lab/themeAugmentation';
 // When using TypeScript 3.x and below
 import '@mui/lab/themeAugmentation';
 import { Banner } from '../Banner';
+import NavBar from "../NavBar";
 
 function Copyright() {
     return (
@@ -81,30 +82,11 @@ export const Layout = ( {children} : IProps ) => {
                         <Banner/>
                     </a>
                 </div>
-                <a href="/about">
-                    <div style={{
-                        width: "35%", 
-                        position:"absolute", 
-                        zIndex: 10,
-                        marginLeft: "70%",
-                        top: "63%",
-                        backgroundColor: "#FEC901",
-                        color:"black",
-                        fontSize:"100%",
-                        padding: "2.5%",
-                        border: ".2rem solid black",
-                        borderRadius: ".4rem",
-                        boxShadow: ".2rem .2rem #000000",
-                        fontFamily: "sans-serif",
-                        fontWeight: "600"
-                    }}>
-                    Que tal conhecer um pouco sobre a história da computação gráfica?
-                    </div>
-                </a>
               </div>
             </Container>
           </Box>
-          <Container sx={{ py: 14 }} maxWidth="md">
+          <NavBar/>
+          <Container sx={{ py: 6 }} maxWidth="md">
             {/* End hero unit */}
             <Grid container spacing={2}>
               {children}
@@ -113,11 +95,11 @@ export const Layout = ( {children} : IProps ) => {
         </main>
         {/* Footer */}
   
-        <Box sx={{ bgcolor: '#74247A', p: 3, color:"white" }} component="footer">
-          <Typography variant="h6" align="center" gutterBottom>
-          Site feito por Eduarda1, Eduarda2, Felipe e Nicolas
+        <Box sx={{ bgcolor: '#74247A', p: 2, color:"white" }} component="footer">
+          <Typography variant="subtitle1" align="center" gutterBottom>
+          Site feito por Eduarda Almeida Garrett de Carvalho, Eduarda Tuboy Nardin, Felipe Volkweis de Oliveira e Nicolas Carreiro Rodrigues 
           </Typography>
-          <Typography variant="h6" align="center">
+          <Typography variant="subtitle1" align="center">
             Professor Claudio
           </Typography>
           

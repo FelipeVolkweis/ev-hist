@@ -1,5 +1,6 @@
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from '@mui/lab';
 import { Typography } from '@mui/material';
+import { useState } from 'react';
 
 interface TimeLineContent {
     year: string,
@@ -13,6 +14,10 @@ interface IProps {
 }
 
 export const TimeLine = (props: IProps) => {
+    const [selected, setSelected] = useState(-1);
+
+    const [mouseOver, setMouseOver] = useState(-1); 
+
     return(
         <>
         <Timeline position="alternate">
@@ -37,10 +42,25 @@ export const TimeLine = (props: IProps) => {
                         </TimelineOppositeContent>
                         <TimelineSeparator sx={{ backgroundColor: "primary" }}>
                         <TimelineConnector sx={{ backgroundColor: "primary" }}/>
-                        <a href="sim1.html" target="_blank">
-                            <TimelineDot color="primary">
-                            </TimelineDot>
-                        </a>
+                        <div 
+                            style={{cursor: "pointer"}}
+                            onClick={(e) => {
+                            if(selected == props.content.indexOf(c)) {
+                                setSelected(-1)
+                            } else {
+                                setSelected(props.content.indexOf(c))
+                            }
+                        }}>
+                        <TimelineDot onMouseOver={(e) => {
+                            setMouseOver(props.content.indexOf(c))
+                        }} 
+                            onMouseOut={() => {
+                                setMouseOver(-1)
+                            }} 
+                            color={mouseOver == props.content.indexOf(c) ? "info" : "primary"}>
+                            
+                        </TimelineDot>
+                        </div>
                         <TimelineConnector sx={{ backgroundColor: "primary" }}/>
                         </TimelineSeparator>
                         <TimelineContent sx={{ py: '12px', px: 2 }}>
@@ -50,6 +70,10 @@ export const TimeLine = (props: IProps) => {
                             <Typography>{c.content}</Typography>
                         </TimelineContent>
                     </TimelineItem>
+                    
+                    { props.content.indexOf(c) == selected && 
+                        <div style={{ backgroundColor: "red", width: "100%", margin: "2em 0"}}>CONTENT</div>
+                    }
                     </>
                 )} else {
                     return (

@@ -15,8 +15,8 @@ export default function Index() {
     <Layout> 
     <BrowserRouter>
       <Routes>
-          <Route path="/" element={<TimeLine content={timelineData} />} />
-          <Route path="/about" element={<About/>} />
+          <Route path="/timeline" element={<TimeLine content={timelineData} />} />
+          <Route path="/" element={<About/>} />
        </Routes>
       </BrowserRouter>
     </Layout>
