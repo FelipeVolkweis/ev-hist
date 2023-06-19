@@ -44,14 +44,14 @@ export const TimeLine = (props: IProps) => {
                         <TimelineConnector sx={{ backgroundColor: "primary" }}/>
                         <div 
                             style={{cursor: "pointer"}}
-                            onClick={(e) => {
+                            onClick={() => {
                             if(selected == props.content.indexOf(c)) {
                                 setSelected(-1)
                             } else {
                                 setSelected(props.content.indexOf(c))
                             }
                         }}>
-                        <TimelineDot onMouseOver={(e) => {
+                        <TimelineDot onMouseOver={() => {
                             setMouseOver(props.content.indexOf(c))
                         }} 
                             onMouseOut={() => {
