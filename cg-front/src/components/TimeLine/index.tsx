@@ -1,7 +1,7 @@
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from '@mui/lab';
 import { Typography } from '@mui/material';
 import { useState } from 'react';
-import AddIcon from '@mui/icons-material/Add';
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 
 interface TimeLineContent {
     year: string,
@@ -60,7 +60,7 @@ export const TimeLine = (props: IProps) => {
                                 setMouseOver(-1)
                             }} 
                             color={mouseOver == props.content.indexOf(c) ? "info" : "primary"}>
-                            <AddIcon sx={{ display: { md: 'flex' }, fontSize: "1em" }} />
+                            <KeyboardDoubleArrowDownIcon sx={{ display: { md: 'flex' }, fontSize: "1em" }} />
                         </TimelineDot>
                         </div>
                         <TimelineConnector sx={{ backgroundColor: "primary", width: "15%" }}/>
