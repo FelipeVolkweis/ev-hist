@@ -45,6 +45,7 @@ export const TimeLine = (props: IProps) => {
                         <TimelineSeparator sx={{ backgroundColor: "primary" }}>
                         <TimelineConnector sx={{ backgroundColor: "primary", width: "15%" }}/>
                         <div 
+                            className={props.content.indexOf(c) == 0 ? "shake" : ""}
                             style={{cursor: "pointer"}}
                             onClick={() => {
                             if(selected == props.content.indexOf(c)) {
@@ -53,9 +54,11 @@ export const TimeLine = (props: IProps) => {
                                 setSelected(props.content.indexOf(c))
                             }
                         }}>
-                        <TimelineDot onMouseOver={() => {
-                            setMouseOver(props.content.indexOf(c))
-                        }} 
+                        <TimelineDot 
+                            className={props.content.indexOf(c) == 0 ? "colorChange" : ""}
+                            onMouseOver={() => {
+                                setMouseOver(props.content.indexOf(c))
+                            }} 
                             onMouseOut={() => {
                                 setMouseOver(-1)
                             }} 
