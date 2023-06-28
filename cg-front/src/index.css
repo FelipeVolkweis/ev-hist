@@ -48,11 +48,11 @@ table {
 }
 
 .shake {
-	animation: shake 1s;
+	animation: shake .5s;
 }
 
 .colorChange {
-	animation: colorChange 1s;
+	/* animation: colorChange 1s; */
 }
 
 @keyframes shake {
