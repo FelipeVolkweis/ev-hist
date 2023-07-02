@@ -51,10 +51,6 @@ table {
 	animation: shake .5s;
 }
 
-.colorChange {
-	/* animation: colorChange 1s; */
-}
-
 @keyframes shake {
 	0% { transform: translateX(0); }
 	20% { transform: translateX(-5px); }
@@ -62,12 +58,4 @@ table {
 	60% { transform: translateX(-5px); }
 	80% { transform: translateX(5px); }
 	100% { transform: translateX(0); }
-}
-
-@keyframes colorChange {
-	0% { background-color: #74247A; }
-	25% { background-color: #0439FF; }
-	50% { background-color: #74247A; }
-	75% { background-color: #0439FF; }
-	100% { background-color: #74247A; }
 }

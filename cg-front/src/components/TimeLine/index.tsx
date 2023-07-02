@@ -80,7 +80,7 @@ export const TimeLine = (props: IProps) => {
                         <div style={{width: "100%", margin: "2em 0"}}>
                             <Typography>{c.texto}</Typography>
                             <br></br>
-                            <Typography><a href={c.redirect} target='_blank'>Clique para saber mais!</a></Typography>
+                            { c.redirect && <iframe width="100%" height="590" src={c.redirect.replace(`/watch?v=`, `/embed/`)} title="" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>}
                         </div>
                     }
                     </>
