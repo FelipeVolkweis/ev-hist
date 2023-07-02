@@ -1,6 +1,6 @@
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from '@mui/lab';
 import { Typography } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 
 interface TimeLineContent {
@@ -19,6 +19,27 @@ export const TimeLine = (props: IProps) => {
     const [selected, setSelected] = useState(-1);
 
     const [mouseOver, setMouseOver] = useState(-1); 
+
+    const buttonRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const shakeButton = () => {
+            if(buttonRef.current !== null) {
+                buttonRef.current.classList.add('shake'); 
+
+                setTimeout(() => {
+                    buttonRef.current!.classList.remove('shake');
+                }, 1000);
+            }
+        };
+
+        shakeButton();
+        const interval = setInterval(shakeButton, 5000);
+
+        return () => {
+        clearInterval(interval);
+        };
+    }, []);
 
     return(
         <>
@@ -45,7 +66,7 @@ export const TimeLine = (props: IProps) => {
                         <TimelineSeparator sx={{ backgroundColor: "primary" }}>
                         <TimelineConnector sx={{ backgroundColor: "primary", width: "15%" }}/>
                         <div 
-                            className={props.content.indexOf(c) == 0 ? "shake" : ""}
+                            ref={props.content.indexOf(c) == 0 ? buttonRef : null}
                             style={{cursor: "pointer"}}
                             onClick={() => {
                             if(selected == props.content.indexOf(c)) {
@@ -80,7 +101,7 @@ export const TimeLine = (props: IProps) => {
                         <div style={{width: "100%", margin: "2em 0"}}>
                             <Typography>{c.texto}</Typography>
                             <br></br>
-                            { c.redirect && <iframe width="100%" height="590" src={c.redirect.replace(`/watch?v=`, `/embed/`)} title="" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>}
+                            { c.redirect && <iframe width="100%" height="480" src={c.redirect.replace(`/watch?v=`, `/embed/`)} title="" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>}
                         </div>
                     }
                     </>
