@@ -69,7 +69,7 @@ export const TimeLine = (props: IProps) => {
                                 width: "100%",
                                 margin: "2em 0"
                             }}
-                            src={c.picture}/>
+                            src={c.picture.length > 0 ? "/images/" + c.picture : ""}/>
                         </TimelineOppositeContent>
                         <TimelineSeparator sx={{ backgroundColor: "primary" }}>
                         <TimelineConnector sx={{ backgroundColor: "primary", width: "15%" }}/>
@@ -127,7 +127,7 @@ export const TimeLine = (props: IProps) => {
                                 width: "100%",
                                 margin: "2em 0"
                             }}
-                            src={c.picture}/>
+                            src={c.picture.length > 0 ? "/images/" + c.picture : ""}/>
                         </TimelineOppositeContent>
                         <TimelineSeparator>
                         <TimelineConnector />
