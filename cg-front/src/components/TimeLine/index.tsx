@@ -20,32 +20,40 @@ export const TimeLine = (props: IProps) => {
 
     const [mouseOver, setMouseOver] = useState(-1); 
 
-    const buttonRef = useRef<HTMLDivElement>(null);
+    const [clickedOnce, setClickedOnce] = useState(false);
 
-    useEffect(() => {
-        const shakeButton = () => {
-            if(buttonRef.current !== null) {
-                buttonRef.current.classList.add('shake'); 
-
-                setTimeout(() => {
-                    buttonRef.current!.classList.remove('shake');
-                }, 1000);
-            }
-        };
-
-        shakeButton();
-        const interval = setInterval(shakeButton, 5000);
-
-        return () => {
-        clearInterval(interval);
-        };
-    }, []);
 
     return(
         <>
         <Timeline position="alternate">
         {
             props.content?.map((c: TimeLineContent) => {
+                
+            const buttonRef = useRef<HTMLDivElement>(null);
+
+            useEffect(() => {
+                const shakeButton = () => {
+                    if(buttonRef.current !== null) {
+                        buttonRef.current.classList.add('shake'); 
+
+                        setTimeout(() => {
+                            buttonRef.current!.classList.remove('shake');
+                        }, 1000);
+                    }
+                };
+
+                shakeButton();
+                const interval = setInterval(() => {
+                    if(!clickedOnce) {
+                        shakeButton();
+                    }
+                }, 3000);
+
+                return () => {
+                clearInterval(interval);
+                };
+            }, [clickedOnce]);
+
                 if(c.texto.length > 0) {
                     return (
                     <>
@@ -66,14 +74,15 @@ export const TimeLine = (props: IProps) => {
                         <TimelineSeparator sx={{ backgroundColor: "primary" }}>
                         <TimelineConnector sx={{ backgroundColor: "primary", width: "15%" }}/>
                         <div 
-                            ref={props.content.indexOf(c) == 0 ? buttonRef : null}
+                            ref={buttonRef}
                             style={{cursor: "pointer"}}
                             onClick={() => {
-                            if(selected == props.content.indexOf(c)) {
-                                setSelected(-1)
-                            } else {
-                                setSelected(props.content.indexOf(c))
-                            }
+                                setClickedOnce(true);
+                                if(selected == props.content.indexOf(c)) {
+                                    setSelected(-1);
+                                } else {
+                                    setSelected(props.content.indexOf(c));
+                                }
                         }}>
                         <TimelineDot 
                             className={props.content.indexOf(c) == 0 ? "colorChange" : ""}
@@ -89,7 +98,7 @@ export const TimeLine = (props: IProps) => {
                         </div>
                         <TimelineConnector sx={{ backgroundColor: "primary", width: "15%" }}/>
                         </TimelineSeparator>
-                        <TimelineContent sx={{ py: '12px', px: 2 }}>
+                        <TimelineContent sx={{ py: '12px', px: 2, margin: "auto" }}>
                             <Typography variant="h6" component="span">
                                 {c.year}
                             </Typography>
@@ -99,7 +108,7 @@ export const TimeLine = (props: IProps) => {
                     
                     { props.content.indexOf(c) == selected && 
                         <div style={{width: "100%", margin: "2em 0"}}>
-                            <Typography>{c.texto}</Typography>
+                            <Typography sx={{textAlign: 'justify'}}>{c.texto}</Typography>
                             <br></br>
                             { c.redirect && <iframe width="100%" height="480" src={c.redirect.replace(`/watch?v=`, `/embed/`)} title="" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>}
                         </div>
