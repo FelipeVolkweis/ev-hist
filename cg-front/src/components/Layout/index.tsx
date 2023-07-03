@@ -25,7 +25,7 @@ function Copyright() {
             Acesse o link do museu!
         </Typography>
         <Link color="inherit" href="https://mc.icmc.usp.br/" target="_blank">
-          Museu
+          Museu ICMC - USP
         </Link>{' '}
       </Typography>
     );
