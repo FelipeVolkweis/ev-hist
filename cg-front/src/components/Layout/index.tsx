@@ -27,8 +27,6 @@ function Copyright() {
         <Link color="inherit" href="https://mc.icmc.usp.br/" target="_blank">
           Museu
         </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
       </Typography>
     );
   }
