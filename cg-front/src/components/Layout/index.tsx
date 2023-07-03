@@ -98,7 +98,7 @@ export const Layout = ( {children} : IProps ) => {
           Site feito por Eduarda Almeida Garrett de Carvalho, Eduarda Tuboy Nardin, Felipe Volkweis de Oliveira e Nicolas Carreiro Rodrigues 
           </Typography>
           <Typography variant="subtitle1" align="center">
-            Professor Claudio
+            Professor Claudio Fabiano Motta Toledo
           </Typography>
           
         </Box>
