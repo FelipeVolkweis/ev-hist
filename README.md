@@ -16,11 +16,11 @@ https://nodejs.org/
 
 Obs.: Uma versão do site em produção pode ser encontrada no seguinte link:
 https://ev-hist.vercel.app/
-
-
-Projeto feito por:
-
-Eduarda Almeida Garrett de Carvalho
-Eduarda Tuboy Nardin
-Felipe Volkweis de Oliveira
-Nicolas Carreiro Rodrigues
+\
+\
+Projeto feito por:\
+\
+Eduarda Almeida Garrett de Carvalho\
+Eduarda Tuboy Nardin\
+Felipe Volkweis de Oliveira\
+Nicolas Carreiro Rodrigues\
