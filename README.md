@@ -2,7 +2,8 @@
 
 # Evolução da Computação Gráfica
 
-Para abrir o projeto é necessário:
+Para abrir o projeto é necessário:\
+
 1º: Instalar o Node.js
 https://nodejs.org/
 
