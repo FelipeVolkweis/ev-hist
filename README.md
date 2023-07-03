@@ -23,4 +23,4 @@ Projeto feito por:\
 Eduarda Almeida Garrett de Carvalho\
 Eduarda Tuboy Nardin\
 Felipe Volkweis de Oliveira\
-Nicolas Carreiro Rodrigues\
+Nicolas Carreiro Rodrigues
