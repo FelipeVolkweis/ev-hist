@@ -80,7 +80,7 @@ export const timelineData =  [
   "content": `Um computador analógico foi desenvolvido por Charles Csuri e utilizado para transformar um desenho.`,
   "picture": `1963.png`,
   "texto": `Charles Csuri foi professor da universidade de Ohio de educação artística e ciência da computação, pelos seus feitos, foi apelidado pelos historiadores de “pai da arte computacional”, apesar de se apelidar de “o primeiro artista com habilidades artísticas significativas a trabalhar com o computador”. Csuri ficou conhecido pela combinação que fez de métodos artísticos convencionais (como pintura), com algoritmos, computadores e outras tecnologias. Charles chegou a criar um computador analógico, chamado “Md1”, para fazer seus trabalhos artísticos! Seu trabalho foi pioneiro para expressão no campo da CG, como uma forma artística e criativa. Um dos seus trabalhos mais famoso foi Beija-flor, lançado em 1968.`,
-  "redirect": `https://youtu.be/OBTBSz5ogxo`
+  "redirect": `https://www.youtube.com/watch?v=OBTBSz5ogxo`
 },
 { 
   "year" : `1965`, 
